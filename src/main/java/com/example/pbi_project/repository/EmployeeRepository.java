@@ -1,6 +1,6 @@
 package com.example.pbi_project.repository;
-
+import com.example.pbi_project.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-interface EmployeeRepository extends JpaRepository<EmployeeRepository,Long> {
+public interface EmployeeRepository extends JpaRepository<Employee,Long> {
 }
