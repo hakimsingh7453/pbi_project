@@ -1,15 +1,15 @@
 package com.example.pbi_project.controller;
 
 
+import com.example.pbi_project.dto.EmployeeDto;
 import com.example.pbi_project.model.Employee;
 import com.example.pbi_project.service.EmployeeService;
 import com.example.pbi_project.serviceimpl.EmployeeServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api")
@@ -23,6 +23,16 @@ public class EmployeeController {
     @PostMapping(value = "/saveEmployee")
     public  ResponseEntity<Employee> saveEmployee( @RequestBody  Employee employee){
         return new ResponseEntity<Employee>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/getEmail")
+    public List<EmployeeDto> listEmail(){
+        return employeeService.listEmployeeid();
+    }
+
+    @GetMapping(value = "/getdto")
+    public List<EmployeeDto> getDto(){
+        return employeeService.listdto();
     }
 
 }
