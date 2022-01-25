@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api")
 public class EmployeeController {
     private EmployeeService employeeService;
 
@@ -20,7 +19,7 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @PostMapping(value = "/saveEmployee")
+    @PostMapping(value = "/addEmployee")
     public  ResponseEntity<Employee> saveEmployee( @RequestBody  Employee employee){
         return new ResponseEntity<Employee>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
     }
@@ -32,7 +31,7 @@ public class EmployeeController {
 
     @GetMapping(value = "/")
     public String welcomemessage(){
-        return "Your Welome in this page";
+        return "Authorised....";
     }
 
 
