@@ -3,6 +3,7 @@ import com.example.pbi_project.dto.EmployeeDto;
 import com.example.pbi_project.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
