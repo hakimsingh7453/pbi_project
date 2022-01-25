@@ -30,6 +30,17 @@ public class EmployeeController {
         return employeeService.listEmployeeid();
     }
 
+    @GetMapping(value = "/")
+    public String welcomemessage(){
+        return "Your Welome in this page";
+    }
+
+
+    @GetMapping(value = "")
+    public String welcome(){
+        return "Your Welome in this page 2";
+    }
+
     @GetMapping(value = "/getdto")
     public List<EmployeeDto> getDto(){
         return employeeService.listdto();
